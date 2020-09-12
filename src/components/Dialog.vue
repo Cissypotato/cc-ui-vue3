@@ -1,11 +1,10 @@
 <template>
     <div>
-        hell0
+        dialog
     </div>
 </template>
-
-<script>
+<script lang="ts">
 export default {
-    
+    name:"dialog"
 }
 </script>
