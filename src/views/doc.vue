@@ -73,6 +73,7 @@ export default {
                 left: 0;
                 top: 0;
                 padding-top: 4.6rem;
+                z-index: 9;
             }
         }
         
