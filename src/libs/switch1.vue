@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <button :class="{checked:value}" @click="toggle"><span ></span></button>
+    <div >
+        <button class="cc-switch" :class="{[`cc-checked`]:value}" @click="toggle"><span ></span></button>
     </div>
 </template>
 <script>
@@ -18,14 +18,14 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 $h1:22px;
 $h2:$h1 - 4px;
 $h3:$h2+2px;
 $mainColor:blue;
 $defaultColor:gray;
-button:focus{outline: none;}
-button{
+.cc-switch:focus{outline: none;}
+.cc-switch{
     height: $h1;
     width: $h1*2;
     border-radius: $h1;
@@ -43,15 +43,15 @@ span{
         left: 2px;
         transition: left 250ms;
     }
-    button.checked{
+    .cc-switch.cc-checked{
         background: $mainColor;
     }
-    button.checked span{
+    .cc-switch.cc-checked span{
         
         left:calc(100% - #{$h3});
     }
 
-// button:hover > span{
+// cc-switch:hover > span{
 //         left: calc(100% - #{$h2}-2px);
 //     }
 
