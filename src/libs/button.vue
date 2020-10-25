@@ -42,7 +42,8 @@ export default {
 </script>
 <style lang="scss" >
   $h:32px;
-  $border-color:red;
+  $border-color:#dbdbdb;
+  $hover-border-corlor:#b5b5b5;
   $bg-color:pink;
   $color:#333;
   $radius:4px;
@@ -59,13 +60,17 @@ export default {
     border-radius: $radius;
     white-space: nowrap;
     background: #fff;
-    border:1px solid $bg-color;
-    box-shadow: 0 1px 0 fade-out($color: red, $amount: 0.95);
+    border:1px solid $border-color;
+    box-shadow: 0 1px 0 fade-out($color:$hover-border-corlor, $amount: 0.95);
     &+&{
       margin-left: 20px;
     }
-    &:focus,&:hover{
-      color: $border-color;
+   &:hover{
+      border-color:$hover-border-corlor;
+    }
+    &:focus{
+      border-color:#3273dc;
+      box-shadow: 0 0 2px #3273dc;
     }
     &:focus{ 
       outline: none;
