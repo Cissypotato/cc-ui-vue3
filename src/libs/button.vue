@@ -1,6 +1,6 @@
 <template>
  
-    <button class="cc-button" :class="classes">
+    <button class="cc-button" :class="classes" :disabled="disabled">
       <slot />
     </button>
   
@@ -11,7 +11,6 @@
 import { computed } from 'vue'
 export default {
     name:'Button',
-    inheritAttrs:false,
     props:{
       theme:{
         type:String,
@@ -25,7 +24,10 @@ export default {
         type:String,
         default:"button"
       },
-
+      disabled:{
+        type:Boolean,
+        default:false
+      }
     },
     setup(props,context) {
       let {theme,size,leval}=props
@@ -36,7 +38,7 @@ export default {
           [`cc-leval-${leval}`]:leval,
         }
       })
-      return classes
+      return {classes}
     }
 }
 </script>
@@ -76,5 +78,61 @@ export default {
       outline: none;
     }
     &::-moz-focus-inner{border: 0;}//兼容Firefox
+    &.cc-theme-text{
+      border:none;
+    }
+    &.cc-theme-text:hover{
+      background:#fafafa;
+    }
+    &.cc-theme-link{
+      border:none;
+      color: #3273dc;
+    }
+    &.cc-theme-button{
+      &.cc-size-small{
+        border-radius: 2px;
+        font-size: .75em;
+         height:(3*$h)/4;
+        padding: 0 8px;
+      }
+       &.cc-size-large{
+        font-size: 1.2rem;
+        padding: 0 16px;
+        height:1.2*$h;
+      }
+    }
+    &.cc-theme-button{
+      &.cc-leval-primary{
+        background: #00c4a7;
+        border: transparent;
+        color: #fff;
+      }
+      &.cc-leval-success{
+        background: #48c774;
+         border: transparent;
+        color: #fff;
+      }
+      &.cc-leval-warning{
+        background: #ffdd57;
+        border: transparent;
+      }
+      &.cc-leval-danger{
+        background: #f14668;
+        border: transparent;
+        color: #fff;
+      }
+    }
+    &.cc-theme-button{
+      &[disabled]{
+        cursor: not-allowed;
+        color:gray
+      }
+    }
+    &.cc-theme-text{
+      &[disabled]{
+        cursor: not-allowed;
+        color:gray
+      }
+    }
   }
 </style>
