@@ -3,7 +3,18 @@
        <top-nav />
         <div class="main">
             <div class="aside" v-if="asideVisible">
+              <h3>文档</h3>
+            <ul>
+                <li><router-link to='/doc/intro'>介绍</router-link></li>
+            </ul>
+            <ul>
+                <li><router-link to='/doc/install'>安装</router-link></li>
+            </ul>
+            <ul>
+                <li><router-link to='/doc/getstart'>开始</router-link></li>
+            </ul>
              <h3>全部组件</h3>
+             
              <ul>
                 <li><router-link to='/doc/switch'>switch组件</router-link></li>
                 <li><router-link to='/doc/button'>button组件</router-link></li>
@@ -50,22 +61,31 @@ export default {
         flex-direction: column;
         .main{
             flex: 1;
-            border: 1px solid blue;
+            // border: 1px solid blue;
             display: flex;
-            padding-top: 3.6rem;
             .content{
+                padding: 20px;
                 flex: 1;
-                border:1px solid red;
+                // border:1px solid red;
             }
         }
         .aside{
             background: lightblue;
             width: 150px;
-            padding: 16px;
-            
+            padding: 16px 0;
+            >h3{
+                padding: 4px 16px;
+            }
             >ul{
-                >li{
-                    padding: 4px 0;
+                >li{    
+                    a{
+                         padding: 4px 16px;
+                         display: block;
+                        &.router-link-active{
+                           
+                            background: #fff;
+                        }
+                    }
                 }
             }
             @media (max-width: 500px) {

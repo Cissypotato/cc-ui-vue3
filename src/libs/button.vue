@@ -52,6 +52,7 @@ export default {
 
   .cc-button{
     height: $h;
+    margin-top: 10px;
     box-sizing: border-box;
     padding: 0 12px;
     display: inline-flex;
