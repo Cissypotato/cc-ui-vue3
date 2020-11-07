@@ -7,8 +7,7 @@
         </svg>
       </div>
       <div class="navs">
-        <a href="">nav1</a>
-        <a href="">nav2</a>
+        <a href="">文档</a>
       </div>
       <span class="toggleAside" @click="toggleVisible">SSS</span>
     </div>

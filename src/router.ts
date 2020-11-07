@@ -8,12 +8,15 @@ import DialogDemo from "./components/DialogDemo.vue"
 import TabsDemo from "./components/TabsDemo.vue"
 import DocDemo from "./components/DocDemo.vue"
 
-import Intro from "./views/intro.vue"
-import Install from "./views/install.vue"
-import GetStart from "./views/getstart.vue"
+// import Intro from "./views/intro.vue"
+// import Install from "./views/install.vue"
+// import GetStart from "./views/getstart.vue"
+import Markdown from "./views/markdown.vue"
 import { h } from 'vue'
 
-// const md=filename=>h(Markdown,{})
+const md=filename=>h(Markdown,{
+    path:`../markdown/${filename}.md`,key:filename
+},)
 
 
 export const router=createRouter({
@@ -33,15 +36,15 @@ export const router=createRouter({
                 },
                 {
                     path:'intro',
-                    component:Intro,
+                    component:md('intro'),
                 },
                 {
                     path:'install',
-                    component:Install,
+                    component:md('install'),
                 },
                 {
                     path:'getstart',
-                    component:GetStart,
+                    component:md('getstart'),
                 },
                 {
                     path:'switch',
