@@ -1,6 +1,6 @@
 <template>
     <div >
-        <button class="cc-switch" :class="{[`cc-checked`]:value}" @click="toggle"><span ></span></button>
+        <button class="cc-switch" :class="{[`cc-checked`]:value}" @click="toggle" :disabled="disabled"><span ></span></button>
     </div>
 </template>
 <script>
@@ -8,7 +8,11 @@ import { ref } from 'vue'
 export default {
     name:"switch1",
     props:{
-        value:Boolean
+        value:Boolean,
+        disabled:{
+        type:Boolean,
+        default:false
+      }
     },
     setup(props,context){
         const toggle=()=>{
